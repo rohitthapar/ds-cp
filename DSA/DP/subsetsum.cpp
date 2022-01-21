@@ -6,8 +6,6 @@ int dp[102][1002];
 // recursive code -> subset sum problem
 bool subsetSum(int arr[], int n, int S){
     if(n==0 && S==0){
-        //base condition 
-        //if array is zero then the sum will also be zero
         return true;
     }
     if(n==0 && S!=0){
