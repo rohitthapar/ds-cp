@@ -4,7 +4,7 @@ bool subsetSum(int arr[], int n, int S){
     if(S==0){
         return true;
     }
-    if(n==0){
+    if(n==0 && S!=0){
         return false;
     }
 
