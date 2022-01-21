@@ -17,6 +17,23 @@ int knapsack(int wt[], int val[], int W, int n){
     }
     else return knapsack(wt,val,W,n-1);
 }
+//converting knapsack to subset sum problem 
+// recursive code -> subset sum problem
+bool subsetSum(int arr[], int n, int S){
+    if(n==0 && S==0){
+        //base condition 
+        //if array is zero then the sum will also be zero
+        return true;
+    }
+    if(n==0 && S!=0){
+        return false;
+    }
+
+    if(arr[n-1]<=S){
+        return (subsetSum(arr,n-1,S-arr[n-1]) || subsetSum(arr,n-1,S));
+    }
+    else return subsetSum(arr,n-1,S);
+}
 int main(){
     memset(dp,-1,sizeof(dp));
     int n,w;
