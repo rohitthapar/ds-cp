@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-//we will need a helper function
 bool subsetSum(int arr[], int n, int S){
     if(S==0){
         return true;
