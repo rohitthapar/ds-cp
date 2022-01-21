@@ -5,7 +5,7 @@ int dp[102][1002];
 //converting knapsack to subset sum problem 
 // recursive code -> subset sum problem
 bool subsetSum(int arr[], int n, int S){
-    if(n==0 && S==0){
+    if(S==0){
         return true;
     }
     if(n==0 && S!=0){
