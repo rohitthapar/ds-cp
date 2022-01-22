@@ -36,3 +36,7 @@ int main(){
     // cout<<subsetSum(arr,n,range)<<endl;
     return 0;
 }
+// 6
+// 2 7 4 1 8 1 
+// stones = [31,26,33,21,40]
+// Output: 5

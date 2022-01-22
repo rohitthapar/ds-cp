@@ -26,8 +26,8 @@ int minsteps_n(int n,int *ans){
     return ans[n];
 }
 int minsteps_n(int n){
-    int *ans = new int[n+1]{-1};
-    return minsteps_n(n,ans);
+    // int *ans = new int[n+1]{-1};
+    // return minsteps_n(n,ans);
 }
 int minsteps_dp(int n){
     int *ans = new int[n+1];
