@@ -8,11 +8,11 @@ int findMin(int arr[],int n,int c_sum,int sum){
     if(n == 0){
         return abs(sum - c_sum - c_sum);
     }
-    if(dp[n][sum]!=-1){
-        return dp[n][sum];
-    }
-    dp[n][sum] = min(findMin(arr,n-1,c_sum+arr[n-1],sum),findMin(arr,n-1,c_sum,sum));
-    return dp[n][sum];
+    // if(dp[n][sum]!=-1){
+    //     return dp[n][sum];
+    // }
+    return min(findMin(arr,n-1,c_sum+arr[n-1],sum),findMin(arr,n-1,c_sum,sum));
+    // return dp[n][sum];
 }
 
 int findSum(int arr[],int n){
