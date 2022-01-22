@@ -1,17 +1,19 @@
 #include<iostream>
 using namespace std;
 
-int countSubset(int arr[],int n,int s){
+int countSum(int arr[],int n,int sum){
+    if(sum == 0){
+        return 1;
+    }
+    // int n = sizeof(arr);
     if(n == 0){
         return 0;
     }
-    if(s == 0){
-        return 2;
+    if(arr[n-1]<=sum){
+        return countSum(arr,n-1,sum-arr[n-1]) + countSum(arr,n-1,sum);
     }
-    if(arr[n-1]<=s){
-        return countSubset(arr,n-1,s-arr[n-1]) +  countSubset(arr,n-1,s);
-    }
-    else return countSubset(arr,n-1,s);
+    else return countSum(arr,n-1,sum);
+
 }
 int main(){
     int n,diff;
@@ -23,6 +25,6 @@ int main(){
         sum = sum + arr[i];
     }
     int s = (sum + diff)/2;
-    cout<<countSubset(arr,n,s)<<endl;
+    cout<<countSum(arr,n,s)<<endl;
     return 0;
 }
