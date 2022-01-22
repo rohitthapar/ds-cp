@@ -1,35 +1,15 @@
 #include<iostream>
 #include<vector>
+#include<cstring>
 using namespace std;
-//subset sum 
-// vector<int>dp;
-// bool subsetSum(int arr[], int n, int S){
-//     if(S==0){
-//         return true;
-//     }
-//     if(n==0 && S!=0){
-//         return false;
-//     }
-
-//     if(arr[n-1]<=S){
-//         return subsetSum(arr,n-1,S-arr[n-1]) || subsetSum(arr,n-1,S);
-//     }
-//     else return subsetSum(arr,n-1,S);
-// }
-
-// int minDiffernece(int arr[],int range){
-//     int n = sizeof(arr);
-//     for(int i=0;i<range/2;i++){
-//         if(subsetSum(arr,i,range) == true){
-//             dp.push_back(arr[i]);
-//         }
-//     }
-
-// }
-// recursice code
+//recursive code ---> memoization
+int dp[102][1002];
 int findMin(int arr[],int n,int c_sum,int sum){
     if(n == 0){
         return abs(sum - c_sum - c_sum);
+    }
+    if(dp[n][sum]!=-1){
+        return dp[n][sum];
     }
     return min(findMin(arr,n-1,c_sum+arr[n-1],sum),findMin(arr,n-1,c_sum,sum));
 }
@@ -43,6 +23,7 @@ int findSum(int arr[],int n){
 
 }
 int main(){
+    memset(dp,-1,sizeof(dp));
     int n,range = 0;
     cin>>n;
     int arr[n];
