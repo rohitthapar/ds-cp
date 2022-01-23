@@ -25,7 +25,7 @@ int countSum(int arr[],int n,int s){
         else dp[i][j] = INT_MAX-1;
     }
     //choice diagram
-    for(int i=2;i<n+1;i++){
+    for(int i=1;i<n+1;i++){
         for(int j=1;j<s+1;j++){
             if(arr[i-1]<=j){
                 dp[i][j] = min(1+dp[i][j-arr[i-1]],dp[i-1][j]);
