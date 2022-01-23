@@ -4,10 +4,10 @@
 using namespace std;
 int countSum(int arr[],int n,int s){
     if(n == 0){
-        return 0;
+        return INT_MAX-1;
     }
     if(s == 0){
-        return INT_MAX-1;
+        return 0;
     }
     if(arr[n-1]<=s){
         return min(1+countSum(arr,n,s-arr[n-1]),countSum(arr,n-1,s));
