@@ -9,18 +9,18 @@ int partition(int array[], int low, int high)
 {
   int pivot = array[low];
   int i = low;
-  int j = high;
+  int j = high-1;
   while(i<j)
   {
-      while(array[i]<=pivot)
+      if(array[i]<=pivot)
       {
           i++;
       }
-      while(array[j]>pivot)
+      if(array[j]>pivot)
       {
           j--;
       }
-      if(i<j)
+      if(i<=j)
       {
           swap(&array[i],&array[j]);
       }
