@@ -30,9 +30,10 @@ int countSum(int arr[],int n,int s){
             if(arr[i-1]<=j){
                 dp[i][j] = min(1+dp[i][j-arr[i-1]],dp[i-1][j]);
             }
-            else return dp[i-1][j];
+            else dp[i][j] =  dp[i-1][j];
         }
     }
+    return dp[n][s];
 }
 int main(){
     memset(dp,-1,sizeof(dp));
