@@ -35,3 +35,10 @@ int main(){
     cout<<knapsack(wt,val,w,n)<<endl;    
     return 0;
 }
+
+//rod cutting problem same as unbounded kanpsack
+//wt ---> length
+//val ---> price
+//w ---> N
+//these are the only changes required to convert 
+//UB kanpsack to rod ccutting problem 
