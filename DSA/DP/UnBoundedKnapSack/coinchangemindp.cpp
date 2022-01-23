@@ -46,7 +46,8 @@ int main(){
     cout<<countSum(arr,n,s)<<endl;
     return 0;
 }
+//input
 // 3
 // 5
 // 1 2 3 
-// 2 
+// output --> 2 
