@@ -51,3 +51,23 @@ int main(){
 // 5
 // 1 2 3 
 // output --> 2 
+
+
+// int m = coins.size();
+// 		int dp[amount+1];
+// 		for(int i=0;i<amount+1;i++){
+// 			dp[i]=amount+1;
+// 		}
+// 		dp[0]=0;
+// 		for(int i=0;i<=amount;i++){
+
+// 			for(int j=0;j<m;j++){
+// 				if(coins[j]<=i){
+// 					dp[i]=min(dp[i],1+dp[i-coins[j]]);
+// 				}
+// 			}
+// 		}
+// 		if(dp[amount]>amount){
+// 			return -1;
+// 		}else{
+// 			return dp[amount];
