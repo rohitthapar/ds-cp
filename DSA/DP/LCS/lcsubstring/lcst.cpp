@@ -20,5 +20,5 @@ int main(){
     cout<<countLCS(x,y,n,m,0)<<endl;
     return 0;
 }
-//abcdgh abedfhr
-//4
+//GeeksforGeeks GeeksQuiz
+//5
