@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cstring>
+const int MOD = (int) 1e9 + 7;
 using namespace std;
 int dp[102][1002];
 int countSum(int arr[],int n,int s){
@@ -19,9 +20,9 @@ int countSum(int arr[],int n,int s){
                 dp[i][j] = dp[i-1][j] + dp[i][j-arr[i-1]];
             }
             else dp[i][j] = dp[i-1][j];
-        }
+        } 
     }
-    return dp[n][s];
+    return dp[n][s] % MOD;
 
 }
 int main(){
