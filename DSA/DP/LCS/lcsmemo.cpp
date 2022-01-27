@@ -11,7 +11,7 @@ int countLCS(string x,string y,int n,int m){
         return dp[n][m];
     }
     if(x[n-1] == y[m-1]){
-        return 1+countLCS(x,y,n-1,m-1);
+        return dp[n][m] = 1+countLCS(x,y,n-1,m-1);
     }
     else return dp[n][m] = max(countLCS(x,y,n-1,m),countLCS(x,y,n,m-1));
 }
