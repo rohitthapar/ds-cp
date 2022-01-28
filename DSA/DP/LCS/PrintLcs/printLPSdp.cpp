@@ -35,7 +35,9 @@ void countLCS(string x,string y,int n,int m){
         else if(dp[i][j-1]>dp[i-1][j]){
             j--;
         }
-        else i--;
+        else if(dp[i][j-1]<dp[i-1][j]){
+            i--;
+        }
     }
     reverse(s.begin(),s.end());
     for(int i=0;i<s.size();i++){
