@@ -52,5 +52,5 @@ int main(){
     countLCS(x,reverse_s(x),n,n);
     return 0;
 }
-//abcdgh abedfhr
-//abdh
+//agbcba
+//abcba
