@@ -18,3 +18,5 @@ int main(){
     cout<<countRSS(x,x,n,n)<<endl;
     return 0;
 }
+// aabebcdd
+//3
