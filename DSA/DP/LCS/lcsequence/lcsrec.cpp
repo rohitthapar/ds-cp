@@ -1,5 +1,5 @@
-#include<iostream>
-#include<string.h>
+#include <iostream>
+#include<string>
 using namespace std;
 int countLCS(string x,string y,int n,int m){
     if(n == 0 || m == 0){
