@@ -46,5 +46,3 @@ int main(){
 // The string is already a palindrome.
 // Input : str = “abcde” 
 // Output : 4
-// Input : str = “abbac” 
-// Output : 1 
