@@ -1,7 +1,7 @@
 //palindrome partitioning
 #include<iostream>
 #include<climits>
-#include<string.h>
+#include<string>
 using namespace std;
 bool isPalindrome(string String, int i, int j)
 {
@@ -21,12 +21,13 @@ int palindromeP(string arr,int i ,int j){
     if(isPalindrome(arr,i,j) == true){
         return 0;
     }
-    int mn = INT_MAX;
+    int mn = INT_MAX,temp;
     for(int k=i;k<=j-1;k++){
-        int temp = palindromeP(arr,i,k) + palindromeP(arr,k+1,j) + 1;
-        if(temp < mn){
-            mn = temp;
-        }
+        temp = palindromeP(arr,i,k) + palindromeP(arr,k+1,j) + 1;
+        mn = min(mn,temp);
+        // if(temp < mn){
+        //     mn = temp;
+        // }
     }
     return mn;
 }
@@ -34,7 +35,7 @@ int main(){
     string x;
     cin>>x;
     int n = x.length();
-    cout<<palindromeP(x,1,n-1)<<endl;
+    cout<<palindromeP(x,0,n-1)<<endl;
     return 0;
 }
 
