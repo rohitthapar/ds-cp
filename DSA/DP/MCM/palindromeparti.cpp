@@ -22,7 +22,7 @@ int palindromeP(string arr,int i ,int j){
         return 0;
     }
     int mn = INT_MAX;
-    for(int k=i;k<j;k++){
+    for(int k=i;k<=j-1;k++){
         int temp = palindromeP(arr,i,k) + palindromeP(arr,k+1,j) + 1;
         if(temp < mn){
             mn = temp;
