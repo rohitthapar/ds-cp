@@ -6,7 +6,7 @@ int longestPalindrome(string x){
     int n = x.length();
     bool dp[n][n];
     memset(dp,0,sizeof(dp));
-     int mL = 0;
+     int mL = 1;
     for(int i = 0;i<n;i++){
         dp[i][i] = true;
     }
@@ -49,7 +49,7 @@ int main(){
 // forgeeksskeegfor
 // 10
 // rohit
-// 0
+// 1
 // geeks
 // 2
 // abcbs
