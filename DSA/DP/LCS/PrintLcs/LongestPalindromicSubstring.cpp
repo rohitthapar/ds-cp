@@ -1,3 +1,7 @@
+#include<iostream>
+#include<string>
+#include<cstring>
+using namespace std;
 int longestPalindrome(string x){
     int n = x.length();
     bool dp[n][n];
@@ -28,7 +32,16 @@ int longestPalindrome(string x){
             }
         }
     }
-
+    //  string s;
+        for(int i = start;i<=start+mL-1;i++){
+            cout<<x[i];
+        }
     return mL;
 
+}
+int main(){
+    string x;
+    cin>>x;
+    cout<<longestPalindrome(x)<<endl;
+    return 0;
 }
