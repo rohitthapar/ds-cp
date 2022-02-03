@@ -45,3 +45,12 @@ int main(){
     cout<<longestPalindrome(x)<<endl;
     return 0;
 }
+
+// forgeeksskeegfor
+// 10
+// rohit
+// 0
+// geeks
+// 2
+// abcbs
+// 3
