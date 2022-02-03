@@ -4,6 +4,7 @@
 #include<cstring>
 using namespace std;
 int dp[1002][1002];
+int result = 0;
 int countLCS(string x,string y,int n,int m){
     for(int i=0;i<n+1;i++){
         for(int j=0;j<m+1;j++){
@@ -16,11 +17,12 @@ int countLCS(string x,string y,int n,int m){
         for(int j=1;j<m+1;j++){
             if(x[i-1]==y[j-1]){
                 dp[i][j] = 1+dp[i-1][j-1]; 
+                result = max(result,dp[i][j]);
             }
             else dp[i][j] = 0;
         }
     }
-    return dp[n][m];
+    return result;
 
 }
 int main(){
@@ -34,4 +36,4 @@ int main(){
     return 0;
 }
 //abcdgh abedfhr
-//4
+//2
