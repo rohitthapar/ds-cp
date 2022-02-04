@@ -1,0 +1,1 @@
+{"name":"Local: q12","url":"/Users/rohitthapar/Documents/Problems/DailyDS/DSA/q12.cpp","tests":[{"id":1643818532710,"input":"4\n3\n2\n13\n100000000\n","output":"1 2 3\n2 3 4\n6 9 13\n23570468 129811858 80835401\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/rohitthapar/Documents/Problems/DailyDS/DSA/q12.cpp","group":"local","local":true}

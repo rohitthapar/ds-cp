@@ -3,7 +3,9 @@
 #include<iostream>
 #include<string>
 #include<cstring>
+#include<unordered_map>
 using namespace std;
+unordered_map <string,int> mp;
 bool solve(string s,string x){
     if(s.compare(x) == 0){
         return true; // both the strings are equal so return true
@@ -15,6 +17,13 @@ bool solve(string s,string x){
      // condition 1 to check if swapping occur, Condition 2 to check if swapping doesnt occur
 //       // we are checking recursively the first part of A, and 2nd part of B in cond 1 and vice versa
 //       // we are checking recursively the first part of A to the first part of B in cond 2 and vice versa
+
+    string key = s;
+    s.push_back(" ");
+    key.append(x);
+    if(mp.find(key)!=mp.end()){
+        return mp[key];
+    }
     bool flag = false;
     for(int i = 1;i<n;i++){
         if((solve(s.substr(0,i),x.substr(n-i,i)) && solve(s.substr(i,n-i),x.substr(0,n-i))) ||
@@ -23,11 +32,13 @@ bool solve(string s,string x){
                 break;
             }
     }
-    return flag;
+    return mp[key] = flag;
 
 
 }
 int main(){
+    mp.clear();
+    
     string s,x;
     cin>>s>>x;
     int n = s.size();
@@ -42,20 +53,19 @@ int main(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 //great eatgr
 //true
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
