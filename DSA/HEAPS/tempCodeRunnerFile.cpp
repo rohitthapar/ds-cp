@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
 void min_heap(int *a, int m, int n){
    int j, t;
@@ -36,5 +37,5 @@ int main() {
    for (i = 1; i <= n; i++) {
       cout<<a[i]<<endl;
    }
-//    getch();
+   getch();
 }
