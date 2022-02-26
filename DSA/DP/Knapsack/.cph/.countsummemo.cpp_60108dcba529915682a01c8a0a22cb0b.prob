@@ -1,0 +1,1 @@
+{"name":"Local: countsummemo","url":"/Users/rohitthapar/Documents/Problems/DailyDS/DSA/DP/Knapsack/countsummemo.cpp","tests":[{"id":1645764506877,"input":"4\n6\n1 2 3 3","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/rohitthapar/Documents/Problems/DailyDS/DSA/DP/Knapsack/countsummemo.cpp","group":"local","local":true}
