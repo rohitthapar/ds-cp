@@ -1,7 +1,4 @@
-#include<iostream>
-#include<string.h>
-#include<cstring>
-#include<vector>
+#include<bits/stdc++.h>
 using namespace std;
 vector<char> s;
 int dp[102][1002];
