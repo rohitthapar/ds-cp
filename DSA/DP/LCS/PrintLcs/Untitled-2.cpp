@@ -34,8 +34,7 @@ int main() {
      }
      if(flag)
      {
-       cout<<"f"<<endl;
-     }
+       cout<<"f"<<endl;}
      else
      cout<<"foul"<<endl;
 
