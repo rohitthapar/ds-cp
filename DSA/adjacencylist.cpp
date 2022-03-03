@@ -1,9 +1,10 @@
 #include<iostream>
-#include<bits/stdc++.h>
+#include<list>
+#include<vector>
+#include<iterator>
 
 using namespace std;
-
 int main(){
-    vector<vector<int>> 
+
     return 0;
 }
