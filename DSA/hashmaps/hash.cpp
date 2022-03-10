@@ -18,6 +18,33 @@ class Node{
         }
     }
 };
+
+template<typename T>
+class Hashtable{
+    Node<T>** table;//pointer to an array of pointers
+    int current_size;
+    int table_size;
+
+    public:
+        Hashtable(int ts = 7{
+            table_size = ts;
+            table = new Node<T>*[table_size];
+            current_size = 0;
+            for(int i=0;i<table_size;i++){
+                table[i] = NULL;
+            }
+        }
+        void insert(string key, T value){
+
+        }
+        T search(string key){
+            
+        }
+        void erase(string key){
+            
+        }
+
+};
 int main(){
 
     return 0;
