@@ -24,7 +24,7 @@ int main(){
     // cout<<mp[1];
     unordered_map<int,char> :: iterator it;
     for(it=mp.begin();it!=mp.end();it++){
-        cout<<it->first<<" "<<it->second<<endl;
+        cout<<(*it).first<<" "<<(*it).second<<endl;
     }
 
     return 0;
