@@ -36,3 +36,7 @@ int main(){
 // 3
 
 //solution not optimised  --> will work on that
+
+// use 2d vector and helper function to sort the finish time and then apply 
+// the greedy approach
+
