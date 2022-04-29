@@ -16,6 +16,14 @@ struct Node
     }
 };
 
+void preOrder(struct Node* node){
+    // Time Complexity -> O(N)
+    // Space Complexity -> O(N)
+    if(node == NULL) return;
+    cout<<node->data<<" ";
+    preOrder(node->left);
+    preOrder(node->right);
+}
 
 int main(){
 
@@ -23,7 +31,7 @@ int main(){
     root->left = new Node(2);
     root->right = new Node(3);
     root->left->right = new Node(5);
-    
+    preOrder(root);
 
     return 0;
 }
