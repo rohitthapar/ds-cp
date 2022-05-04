@@ -1,0 +1,1 @@
+{"name":"Local: coinchangedp","url":"/Users/rohitthapar/Documents/Problems/DailyDS/DSA/DP/UnBoundedKnapSack/coinchangedp.cpp","tests":[{"id":1651650566539,"input":"3\n5\n1 2 3 ","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/rohitthapar/Documents/Problems/DailyDS/DSA/DP/UnBoundedKnapSack/coinchangedp.cpp","group":"local","local":true}
