@@ -31,3 +31,7 @@ int main(){
 }
 
 //lexicographically sorted 
+
+
+//33
+//66045 -> giving segmentation fault
