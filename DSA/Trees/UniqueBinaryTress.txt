@@ -1,0 +1,19 @@
+Q) Can you construct a unique binary tree from the following?
+
+a) Preorder and Postorder   --------------> NO
+    Preorder ->  1,2,3 (Root,left,right)
+    Postorder -> 3,2,1 (left,right,root)
+
+        1              1
+       /              /
+      2              2
+     /                \
+    3                  3
+    Preorder -> 1,2,3
+    Postorder -> 3,2,1
+    Same for both
+
+b)Inorder and Preorder  --------------> YES
+Preorder -> 3,9,20,15,7
+Inorder ->9,3,15,20,7 (Left,Root,right)
+
