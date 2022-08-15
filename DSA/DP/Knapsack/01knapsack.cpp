@@ -17,13 +17,18 @@ int knapsack(int wt[],int val[],int w, int n){
 }
 int main(){
     // memset(dp,-1,sizeof(dp));
+    int t;
+    while(t--){
     int n,w;
     cin>>n>>w;
     int wt[n],val[n];
     for(int i=0;i<n;i++){
-        cin>>wt[i]>>val[i];
-
+        cin>>wt[i];
     }
-    cout<<knapsack(wt,val,w,n)<<endl;    
+    for(int i=0;i<n;i++){
+      cin>>val[i];
+    }
+    cout<<knapsack(wt,val,w,n)<<endl; 
+    }   
     return 0;
 }
