@@ -1,0 +1,14 @@
+# ninja log v5
+3	528	1688096103955605464	CMakeFiles/ds.dir/DSA/mergesort.cpp.o	e97c52c56ba4ff91
+18	515	1688096143403080914	CMakeFiles/ds.dir/DSA/q12.cpp.o	376e9616231d476f
+3	530	1688096103958172267	CMakeFiles/ds.dir/DSA/mergesortit.cpp.o	b7406aeea87ecac4
+7	592	1688096132728292058	CMakeFiles/ds.dir/codeforces/1624B.cpp.o	84363a4f9a8cf17e
+3	538	1688096103966290959	CMakeFiles/ds.dir/DSA/minimumPlatforms.cpp.o	96b8988b3d31e06d
+18	545	1688096143434431544	CMakeFiles/ds.dir/DSA/q11.cpp.o	54b3b6ebfd07d5b9
+4	560	1688096103989235530	CMakeFiles/ds.dir/DSA/q1.cpp.o	7318ac605c378fc5
+18	249	1688096143140946396	CMakeFiles/ds.dir/DSA/quick.c.o	fd5f9d5548bc8376
+18	502	1688096143391626565	CMakeFiles/ds.dir/DSA/quicksortit.cpp.o	a9cf5deb33650859
+40	655	1688188390272705449	CMakeFiles/ds.dir/DSA/quicksortrec.cpp.o	f4f787dfd4a9d895
+7	119	1688188403573811162	CMakeFiles/ds.dir/Netwroking/AryanSood_102053042_sessional.c.o	5f1d957b39e64e4e
+7	53	1688188405340835965	CMakeFiles/ds.dir/Netwroking/cl.c.o	99d87e3a77efac12
+8	90	1688188419521716817	CMakeFiles/ds.dir/Netwroking/recvfromB.c.o	de1fdd21655e68c7
