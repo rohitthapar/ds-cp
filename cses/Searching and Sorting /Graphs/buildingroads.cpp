@@ -1,38 +1,66 @@
 #include <bits/stdc++.h>
+#define endl "\n"
 using namespace std;
+#define int long long int
 
-void dfs(int node, vector<int>& vis, vector<vector<int>>& roads) {
-    vis[node] = 1;
-    for (auto road : roads[node]) { 
-        if (!vis[road]) dfs(road, vis, roads);
-    }
+int n, m;
+int cc = 0;
+vector<vector<int>> g;
+vector<bool> vis;
+vector<int> lead;
+
+void dfs(int u)
+{
+	vis[u] = true;
+	for(auto v: g[u])
+	{
+		if(!vis[v])
+		{
+			dfs(v);
+		}
+	}
 }
 
-void buildingRoad(int n, int m, vector<vector<int>>& roads) {
-    vector<int> vis(n, 0);
-    vector<int> r;
-    for (int i = 0; i < n; i++) {
-        if (!vis[i]) {
-            r.push_back(i);
-            dfs(i, vis, roads);
-        }
-    }
-    cout << r.size() << endl;
-    for (int i = 1; i < r.size(); i++) { 
-        cout << r[i] << " ";
-    }
+void process_cc()
+{
+	for(auto i = 1; i <= n; ++i)
+	{
+		if(!vis[i])
+		{
+			cc++;
+			lead.push_back(i);
+			dfs(i);
+		}
+	}
 }
 
-int main() {
-    int n, m; // cities, roads
-    cin >> n >> m;
-    vector<vector<int>> roads(n+1); 
-    for (int i = 0; i < m; i++) {
-        int to, from;
-        cin >> to >> from;
-        roads[to].push_back(from); 
-        roads[from].push_back(to); 
-    }
-    buildingRoad(n, m, roads);
-    return 0;
+
+int32_t main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cin >> n >> m;
+	g.resize(n+1);
+	vis.resize(n+1);
+	for(auto i = 0; i < m; ++i)
+	{
+		int u, v;
+		cin >> u >> v;
+		g[u].push_back(v);
+		g[v].push_back(u);
+	}
+
+	process_cc();
+
+	cout << cc-1 << endl;
+	if(cc > 1 )
+	{
+		int u = lead[0]; int v;
+		for(auto i = 1; i < cc; i++)
+		{
+			v = lead[i];
+			cout << u << " " << v << endl;
+			u = v;
+		}
+	}
 }

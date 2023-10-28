@@ -43,8 +43,5 @@ int calc(string s) {
 }
 int main()
 {
-    string s;
-    cin>>s;
-    cout<<calc(s)<<endl;
-    return 0;
+    cout<<"Pranav Is GOD!!!!";
 }
