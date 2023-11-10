@@ -1,55 +1,78 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-void DFS(int v, std::vector<bool>& visited, std::vector<std::vector<std::pair<int, int>>>& adjlist) {
-    visited[v] = true;
-    for (const auto& neighbor : adjlist[v]) {
-        if (!visited[neighbor.first]) {
-            DFS(neighbor.first, visited, adjlist);
-        }
-    }
+#include <bits/stdc++.h>
+using namespace std;
+int check(vector<vector<int>> &adj, int node, vector<int> &active, int n){
+	for(auto it : adj[node]){
+		if(it < node && active[it] == 0) return it;
+	}
+	return -1;
 }
-
-int count_components(std::vector<std::vector<std::pair<int, int>>>& adjlist) {
-    std::vector<bool> visited(adjlist.size(), false);
-    int count = 0;
-    for (int vertex = 1; vertex < adjlist.size(); vertex++) {
-        if (!visited[vertex]) {
-            DFS(vertex, visited, adjlist);
-            count++;
-        }
-    }
-    return count;
+vector<int> recoverDeadPods(int n, vector<vector<int>> connections, vector<vector<int>> queries){
+	vector<vector<int>> adj(n);
+	int m = connections.size();
+	for(int i=0;i<m;i++){
+		int u, v;
+		cin >> u >> v;
+		adj[u].push_back(v);
+		adj[v].push_back(u);
+	}
+	// int q = queries.size();
+	vector<pair<int, int>> qr(q);
+	for(int i=0;i<queries.size();i++){
+		int op = queries[i][0], id = queries[i][1];
+		qr[i].first = op;
+		qr[i].second = id;
+	}
+	vector<int> res;
+	vector<int> active(n, 0);
+	for(auto it : qr){
+		int op = it.first, id = it.second;
+		if(op == 2) active[id] = 1; 
+		else if(op == 1){
+			if(active[id] == 0) continue; 
+			else if(active[id] != 0 and check(adj, id, active, n) != -1){
+				res.push_back(check(adj, id, active, n));
+			}
+			else res.push_back(-1);
+		}
+	}
+	return res;
 }
-
-int getlat(int g_nodes, std::vector<int>& g_from, std::vector<int>& g_to, std::vector<int>& g_weight, int k) {
-    std::vector<std::vector<std::pair<int, int>>> adjlist(g_nodes + 1);
-    std::vector<std::pair<int, std::pair<int, int>>> zipped_lists;
-    for (int i = 0; i < g_from.size(); i++) {
-        zipped_lists.push_back(std::make_pair(g_weight[i], std::make_pair(g_to[i], g_from[i])));
-    }
-    std::sort(zipped_lists.begin(), zipped_lists.end());
-    for (const auto& item : zipped_lists) {
-        int weight = item.first;
-        int to = item.second.first;
-        int from = item.second.second;
-        adjlist[from].push_back(std::make_pair(to, weight));
-        adjlist[to].push_back(std::make_pair(from, weight));
-    }
-    int remptr = g_from.size() - 1;
-    int res = 0;
-    while (k >= count_components(adjlist) && remptr >= 0) {
-        int u = g_from[remptr];
-        int v = g_to[remptr];
-        res = std::max(res, *std::max_element(g_weight.begin(), g_weight.begin() + remptr + 1));
-        adjlist[u].erase(std::remove_if(adjlist[u].begin(), adjlist[u].end(), [v](const std::pair<int, int>& item) {
-            return item.first == v;
-        }), adjlist[u].end());
-        adjlist[v].erase(std::remove_if(adjlist[v].begin(), adjlist[v].end(), [u](const std::pair<int, int>& item) {
-            return item.first == u;
-        }), adjlist[v].end());
-        remptr--;
-    }
-    return res;
+int main(){
+	int n, m, q;
+	cin >> n >> m >> q;
+	vector<vector<int>> adj(n);
+	// forming the graph
+	for(int i=0;i<m;i++){
+		int u, v;
+		cin >> u >> v;
+		adj[u].push_back(v);
+		adj[v].push_back(u);
+	}
+	// enter queries
+	vector<pair<int, int>> qr(q);
+	for(int i=0;i<q;i++){
+		int op, id;
+		cin >> op >> id;
+		qr[i].first = op;
+		qr[i].second = id;
+	}
+	vector<int> res;
+	vector<int> active(n, 0); // 0 -> all are active
+	// vector<int> vis(n, 0);
+	for(auto it : qr){
+		int op = it.first, id = it.second;
+		if(op == 2) active[id] = 1; // make it inactive
+		else if(op == 1){
+			// if active[id] is active then it will write in db itself
+			if(active[id] == 0) continue; 
+			// if active[id] is not active but lower pod is active 
+			else if(active[id] != 0 and check(adj, id, active, n) != -1){
+				res.push_back(check(adj, id, active, n));
+			}
+			else res.push_back(-1);
+			// if no lower pod is active 
+		}
+	}
+	for(auto i : res) cout << i << " ";
+	return 0;
 }
